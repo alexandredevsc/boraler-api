@@ -1,0 +1,22 @@
+# Compilação Java
+target/
+*.class
+
+# Logs
+*.log
+
+# Variáveis e credenciais locais
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
+
+# Frontend futuro
+node_modules/
+dist/
