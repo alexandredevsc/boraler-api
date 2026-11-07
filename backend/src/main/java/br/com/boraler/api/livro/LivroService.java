@@ -13,4 +13,18 @@ public class LivroService {
     public LivroService(LivroRepository repository) {
         this.repository = repository;
     }
+
+    // Cria um livro com os dados recebidos e salva no banco.
+    public Livro cadastrar(LivroRequisicao requisicao) {
+
+        // Converte dados recebidos no DTO em uma entidade livro.
+        Livro livro = new Livro(
+                requisicao.titulo(),
+                requisicao.autor(),
+                requisicao.lido());
+
+        // Salva o livro no banco e retorna a entidade com o ID gerado.
+        return repository.save(livro);
+
+    }
 }
