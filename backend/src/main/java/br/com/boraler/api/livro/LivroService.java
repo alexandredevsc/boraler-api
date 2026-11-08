@@ -1,5 +1,7 @@
 package br.com.boraler.api.livro;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 // Registra esta classe como um serviço gerenciado pelo Spring.
@@ -26,5 +28,10 @@ public class LivroService {
         // Salva o livro no banco e retorna a entidade com o ID gerado.
         return repository.save(livro);
 
+    }
+
+    // Consulta e retorna todos os livros cadastradso no banco.
+    public List<Livro> listarTodos() {
+        return repository.findAll();
     }
 }

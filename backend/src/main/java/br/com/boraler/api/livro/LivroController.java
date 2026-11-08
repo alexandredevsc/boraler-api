@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.validation.Valid;
 
 import java.net.URI;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -42,6 +44,12 @@ public class LivroController {
 
         return ResponseEntity.created(localizacao).body(livro);
 
+    }
+
+    // Recebe uma requisição GET e retorna todos os livros cadastrados.
+    @GetMapping
+    public List<Livro> listar() {
+        return service.listarTodos();
     }
 
 }
