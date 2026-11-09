@@ -45,4 +45,21 @@ public class LivroService {
         return repository.findById(id)
                 .orElseThrow(() -> new LivroNaoEncontradoException(id));
     }
+
+    // Atualiza os dados de um livro existente, preservando seu ID.
+
+    public Livro atualizar(Long id, LivroRequisicao requisicao) {
+        // Reutiliza a busca que lança uma exceção caso o livro não exista
+
+        Livro livro = buscarPorId(id);
+
+        // Substitui os dados editáveis pelos valores recebidos no DTO.
+        livro.setTitulo(requisicao.titulo());
+        livro.setAutor(requisicao.autor());
+        livro.setLido(requisicao.lido());
+
+        // Salva as alterações e retorna o livro atualizado.
+
+        return repository.save(livro);
+    }
 }
