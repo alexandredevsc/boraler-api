@@ -1,5 +1,7 @@
 package br.com.boraler.api.livro;
 
+import br.com.boraler.api.exception.LivroNaoEncontradoException;
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ public class LivroService {
     // O Spring fornece o Repository ao criar este serviço.
     public LivroService(LivroRepository repository) {
         this.repository = repository;
+
     }
 
     // Cria um livro com os dados recebidos e salva no banco.
@@ -30,8 +33,16 @@ public class LivroService {
 
     }
 
-    // Consulta e retorna todos os livros cadastradso no banco.
+    // Consulta e retorna todos os livros cadastrados no banco.
+
     public List<Livro> listarTodos() {
         return repository.findAll();
+    }
+
+    // Busca um livro pelo identificador informado.
+    public Livro buscarPorId(Long id) {
+        // Retorna o livro encontrado ou lança uma exceção se ele não existir.
+        return repository.findById(id)
+                .orElseThrow(() -> new LivroNaoEncontradoException(id));
     }
 }

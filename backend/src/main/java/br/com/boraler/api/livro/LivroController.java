@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -50,6 +51,13 @@ public class LivroController {
     @GetMapping
     public List<Livro> listar() {
         return service.listarTodos();
+    }
+
+    // Recebe uma requisição GET para consultar um livro pelo ID.
+    @GetMapping("/{id}")
+    public Livro buscarPorId(@PathVariable Long id) {
+        // Encaminha o identificador ao service e retorna o livro encontrado.
+        return service.buscarPorId(id);
     }
 
 }
