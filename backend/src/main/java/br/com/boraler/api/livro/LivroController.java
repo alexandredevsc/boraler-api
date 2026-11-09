@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 // Identifica o componente que receberá requisições HTTP e retornará dados.
@@ -22,12 +23,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class LivroController {
 
     // Guarda a referência ao serviço responsável pelas operações dos livros.
-
     private final LivroService service;
 
     // O Spring fornece o Service ao Criar este controller.
     public LivroController(LivroService service) {
         this.service = service;
+
     }
 
     // Recebe uma requisição POST para cadastrar um Livro
@@ -58,6 +59,13 @@ public class LivroController {
     public Livro buscarPorId(@PathVariable Long id) {
         // Encaminha o identificador ao service e retorna o livro encontrado.
         return service.buscarPorId(id);
+    }
+
+    // Recebe uma requisição PUT para atualizar os dados de um livro.
+    @PutMapping("/{id}")
+    public Livro atualizar(@PathVariable Long id, @Valid @RequestBody LivroRequisicao requisicao) {
+        // Encaminha o ID e os novos dados ao Service.
+        return service.atualizar(id, requisicao);
     }
 
 }
