@@ -77,4 +77,16 @@ public class LivroService {
 
         return repository.save(livro);
     }
+
+    // Exclui um livro existente pelo identificador.
+
+    public void excluir(Long id) {
+
+        // Busca o Livro ou lança a exceção caso ele não exista.
+
+        Livro livro = buscarPorId(id);
+
+        // Remove do banco o livro encontrado.
+        repository.delete(livro);
+    }
 }
