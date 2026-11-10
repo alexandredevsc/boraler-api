@@ -16,7 +16,6 @@ public class LivroService {
     // O Spring fornece o Repository ao criar este serviço.
     public LivroService(LivroRepository repository) {
         this.repository = repository;
-
     }
 
     // Cria um livro com os dados recebidos e salva no banco.
@@ -57,6 +56,22 @@ public class LivroService {
         livro.setTitulo(requisicao.titulo());
         livro.setAutor(requisicao.autor());
         livro.setLido(requisicao.lido());
+
+        // Salva as alterações e retorna o livro atualizado.
+
+        return repository.save(livro);
+    }
+
+    // Marca um livro existente como lido.
+
+    public Livro marcarComoLido(Long id) {
+        // Busca o Livro ou lança a exceção caso ele não exista.
+
+        Livro livro = buscarPorId(id);
+
+        // Altera somente a situação de leitura, preservando titulo e autor.
+
+        livro.setLido(true);
 
         // Salva as alterações e retorna o livro atualizado.
 

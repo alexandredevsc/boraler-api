@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -66,6 +67,13 @@ public class LivroController {
     public Livro atualizar(@PathVariable Long id, @Valid @RequestBody LivroRequisicao requisicao) {
         // Encaminha o ID e os novos dados ao Service.
         return service.atualizar(id, requisicao);
+    }
+
+    // Recebe uma requisição PATCH para marcar um Livro como Lido.
+    @PatchMapping("/{id}/lido")
+    public Livro marcarComoLido(@PathVariable Long id) {
+        // Encaminha o ID ao Service e retorna o livro atualizado.
+        return service.marcarComoLido(id);
     }
 
 }
