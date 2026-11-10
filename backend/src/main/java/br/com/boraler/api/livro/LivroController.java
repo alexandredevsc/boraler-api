@@ -9,6 +9,7 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -76,4 +77,13 @@ public class LivroController {
         return service.marcarComoLido(id);
     }
 
+    // Recebe uma requisição DELETE para excluir um Livro pelo ID.
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+        // Solicita ao Service a exclusão do Livro.
+        service.excluir(id);
+
+        // Retorna HTTP 204, sem corpo na resposta
+        return ResponseEntity.noContent().build();
+    }
 }
