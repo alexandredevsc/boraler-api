@@ -1,0 +1,539 @@
+{
+    "info":  {
+                 "_postman_id":  "5782a6cf-b967-4754-9314-6c31fb8bd898",
+                 "name":  "BoraLer API",
+                 "schema":  "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+                 "createdAt":  "2026-11-07T18:29:53.000Z",
+                 "updatedAt":  "2026-11-11T05:55:58.000Z",
+                 "lastUpdatedBy":  "54057858",
+                 "uid":  "54057858-5782a6cf-b967-4754-9314-6c31fb8bd898"
+             },
+    "item":  [
+                 {
+                     "name":  "RF01 - Cadastrar livro válido.",
+                     "id":  "20310679-57c6-4315-8dab-1cb06e745245",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n    \"titulo\": \"O hobiit\",\r\n    \"autor\": \"J. R. R. Tolkien\",\r\n    \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-07T18:32:59.000Z",
+                     "updatedAt":  "2026-11-11T06:07:20.000Z",
+                     "uid":  "54057858-20310679-57c6-4315-8dab-1cb06e745245"
+                 },
+                 {
+                     "name":  "RF01 - Rejeitar título vazio",
+                     "id":  "b482e09a-ec8a-4127-98f5-ef0d48387b39",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n    \"titulo\": \"\",\r\n    \"autor\": \"J. R. R. Tolkien\",\r\n    \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-07T18:36:05.000Z",
+                     "updatedAt":  "2026-11-11T06:08:27.000Z",
+                     "uid":  "54057858-b482e09a-ec8a-4127-98f5-ef0d48387b39"
+                 },
+                 {
+                     "name":  "RF01 - Rejeitar autor vazio",
+                     "id":  "c8089f5f-0222-4aa4-9edd-4b8e92b54cc8",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n    \"titulo\": \"O Hobbit\",\r\n    \"autor\": \"\",\r\n    \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-07T18:38:41.000Z",
+                     "updatedAt":  "2026-11-11T06:08:50.000Z",
+                     "uid":  "54057858-c8089f5f-0222-4aa4-9edd-4b8e92b54cc8"
+                 },
+                 {
+                     "name":  "RF02 - Listar Livros",
+                     "id":  "27870cb1-e3a7-45aa-9c71-26dc35e62f48",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "GET",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-08T17:06:59.000Z",
+                     "updatedAt":  "2026-11-11T06:00:36.000Z",
+                     "uid":  "54057858-27870cb1-e3a7-45aa-9c71-26dc35e62f48"
+                 },
+                 {
+                     "name":  "RF03 - Buscar livro existente",
+                     "id":  "9680e0ec-f35c-408b-a5e6-ca066419b663",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "GET",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/1",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "1"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-09T16:53:09.000Z",
+                     "updatedAt":  "2026-11-11T06:29:21.000Z",
+                     "uid":  "54057858-9680e0ec-f35c-408b-a5e6-ca066419b663"
+                 },
+                 {
+                     "name":  "RF03 - Buscar livro inexistente",
+                     "id":  "6022cecd-b327-430a-9ba5-6bc45426f734",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "GET",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/999",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "999"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-09T16:55:16.000Z",
+                     "updatedAt":  "2026-11-11T06:29:49.000Z",
+                     "uid":  "54057858-6022cecd-b327-430a-9ba5-6bc45426f734"
+                 },
+                 {
+                     "name":  "RF04 - Atualizar livro válido",
+                     "id":  "c51ed7a0-01c4-4b2a-aee3-cbd2b7bcf014",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "PUT",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n    \"titulo\": \"O Hobbit - Edição revisada\",\r\n    \"autor\": \"J. R. R. Tolkien\",\r\n    \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/1",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "1"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-09T22:54:57.000Z",
+                     "updatedAt":  "2026-11-11T06:32:13.000Z",
+                     "uid":  "54057858-c51ed7a0-01c4-4b2a-aee3-cbd2b7bcf014"
+                 },
+                 {
+                     "name":  "RF04 - Rejeitar atualização com título vazio",
+                     "id":  "a58c83d4-2f83-44b7-a1a4-6ba0989be6b4",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "PUT",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n    \"titulo\": \"\",\r\n    \"autor\": \"J. R. R. Tolkien\",\r\n    \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/1",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "1"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-09T22:59:49.000Z",
+                     "updatedAt":  "2026-11-11T06:32:09.000Z",
+                     "uid":  "54057858-a58c83d4-2f83-44b7-a1a4-6ba0989be6b4"
+                 },
+                 {
+                     "name":  "RF04 - Rejeitar atualização com autor vazio",
+                     "id":  "533b10ca-2e37-4d6f-a278-72361272a80a",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "PUT",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n    \"titulo\": \"O Hobbit - Edição revisada\",\r\n    \"autor\": \"\",\r\n    \"lido\": false\r\n\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/1",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "1"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-09T23:02:21.000Z",
+                     "updatedAt":  "2026-11-11T06:33:02.000Z",
+                     "uid":  "54057858-533b10ca-2e37-4d6f-a278-72361272a80a"
+                 },
+                 {
+                     "name":  "RF04 - Rejeitar atualização de livro inexistente",
+                     "id":  "a1c962ca-532c-4ec5-a2d6-801983b61bda",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "PUT",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n  \"titulo\": \"O Hobbit - Edição revisada\",\r\n  \"autor\": \"J. R. R. Tolkien\",\r\n  \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/999",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "999"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-09T23:08:10.000Z",
+                     "updatedAt":  "2026-11-11T06:37:33.000Z",
+                     "uid":  "54057858-a1c962ca-532c-4ec5-a2d6-801983b61bda"
+                 },
+                 {
+                     "name":  "RF05 - Marcar livro como lido",
+                     "id":  "d9149b73-a095-41df-82dc-114e599524a0",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "PATCH",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/1/lido",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "1",
+                                                              "lido"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-10T17:00:59.000Z",
+                     "updatedAt":  "2026-11-11T06:39:57.000Z",
+                     "uid":  "54057858-d9149b73-a095-41df-82dc-114e599524a0"
+                 },
+                 {
+                     "name":  "RF05 - Rejeitar marcação de livro inexistente",
+                     "id":  "2abb993c-5999-43f8-aa6d-f68944044c51",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "PATCH",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/999/lido",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "999",
+                                                              "lido"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-10T17:02:48.000Z",
+                     "updatedAt":  "2026-11-11T06:40:14.000Z",
+                     "uid":  "54057858-2abb993c-5999-43f8-aa6d-f68944044c51"
+                 },
+                 {
+                     "name":  "RF06 - criando dois id para exclusão e manter livro 1",
+                     "id":  "95ae7874-c6d6-4de3-a048-7c0267bb115a",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\r\n  \"titulo\": \"Livro para teste de exclusão\",\r\n  \"autor\": \"Autor de teste\",\r\n  \"lido\": false\r\n}",
+                                                  "options":  {
+                                                                  "raw":  {
+                                                                              "language":  "json"
+                                                                          }
+                                                              }
+                                              },
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-10T17:42:01.000Z",
+                     "updatedAt":  "2026-11-11T06:41:32.000Z",
+                     "uid":  "54057858-95ae7874-c6d6-4de3-a048-7c0267bb115a"
+                 },
+                 {
+                     "name":  "RF06 - Excluir livro existente",
+                     "id":  "9d16caee-18ca-447e-a2ee-3117e8823416",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "DELETE",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/4",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "4"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-10T17:47:48.000Z",
+                     "updatedAt":  "2026-11-11T06:43:53.000Z",
+                     "uid":  "54057858-9d16caee-18ca-447e-a2ee-3117e8823416"
+                 },
+                 {
+                     "name":  "RF06 - Buscar livro excluido e verificar 404",
+                     "id":  "c957d38b-e7d9-4b9c-9fc3-4cb9faba6803",
+                     "protocolProfileBehavior":  {
+                                                     "disableBodyPruning":  true
+                                                 },
+                     "request":  {
+                                     "method":  "GET",
+                                     "header":  [
+
+                                                ],
+                                     "url":  {
+                                                 "raw":  "{{baseUrl}}/api/livros/2",
+                                                 "host":  [
+                                                              "{{baseUrl}}"
+                                                          ],
+                                                 "path":  [
+                                                              "api",
+                                                              "livros",
+                                                              "2"
+                                                          ]
+                                             }
+                                 },
+                     "response":  [
+
+                                  ],
+                     "createdAt":  "2026-11-10T17:51:28.000Z",
+                     "updatedAt":  "2026-11-11T06:49:36.000Z",
+                     "uid":  "54057858-c957d38b-e7d9-4b9c-9fc3-4cb9faba6803"
+                 }
+             ],
+    "variable":  [
+                     {
+                         "key":  "baseUrl",
+                         "value":  "http://localhost:8080",
+                         "type":  "string"
+                     }
+                 ]
+}
