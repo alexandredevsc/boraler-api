@@ -16,7 +16,6 @@ public class LivroService {
     // O Spring fornece o Repository ao criar este serviço.
     public LivroService(LivroRepository repository) {
         this.repository = repository;
-
     }
 
     // Cria um livro com os dados recebidos e salva no banco.
@@ -44,5 +43,50 @@ public class LivroService {
         // Retorna o livro encontrado ou lança uma exceção se ele não existir.
         return repository.findById(id)
                 .orElseThrow(() -> new LivroNaoEncontradoException(id));
+    }
+
+    // Atualiza os dados de um livro existente, preservando seu ID.
+
+    public Livro atualizar(Long id, LivroRequisicao requisicao) {
+        // Reutiliza a busca que lança uma exceção caso o livro não exista
+
+        Livro livro = buscarPorId(id);
+
+        // Substitui os dados editáveis pelos valores recebidos no DTO.
+        livro.setTitulo(requisicao.titulo());
+        livro.setAutor(requisicao.autor());
+        livro.setLido(requisicao.lido());
+
+        // Salva as alterações e retorna o livro atualizado.
+
+        return repository.save(livro);
+    }
+
+    // Marca um livro existente como lido.
+
+    public Livro marcarComoLido(Long id) {
+        // Busca o Livro ou lança a exceção caso ele não exista.
+
+        Livro livro = buscarPorId(id);
+
+        // Altera somente a situação de leitura, preservando titulo e autor.
+
+        livro.setLido(true);
+
+        // Salva as alterações e retorna o livro atualizado.
+
+        return repository.save(livro);
+    }
+
+    // Exclui um livro existente pelo identificador.
+
+    public void excluir(Long id) {
+
+        // Busca o Livro ou lança a exceção caso ele não exista.
+
+        Livro livro = buscarPorId(id);
+
+        // Remove do banco o livro encontrado.
+        repository.delete(livro);
     }
 }
